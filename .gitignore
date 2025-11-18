@@ -1,0 +1,84 @@
+# ==============================
+# Python
+# ==============================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Virtual environment
+.venv/
+env/
+venv/
+
+# Jupyter & IPython
+.ipynb_checkpoints/
+*.ipynb
+
+# ==============================
+# Model & Embedding Files
+# ==============================
+# SentenceTransformer saved models
+embedding_model/
+sentence_transformers/
+# Pickle / Joblib model files
+*.pkl
+*.joblib
+# Hugging Face cache
+~/.cache/
+.cache/
+# Transformers temp files
+*.bin
+*.safetensors
+config.json
+tokenizer.json
+tokenizer_config.json
+special_tokens_map.json
+
+# ==============================
+# Datasets & Logs
+# ==============================
+rules_dataset.csv
+*.csv
+*.tsv
+*.xlsx
+*.log
+logs/
+wandb/
+runs/
+output/
+checkpoints/
+
+# ==============================
+# Environment & OS Files
+# ==============================
+.env
+*.env
+.DS_Store
+Thumbs.db
+
+# ==============================
+# Editor Files
+# ==============================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ==============================
+# FastAPI / Local Dev Artifacts
+# ==============================
+# Local SQLite or cache DBs
+*.db
+*.sqlite
+# Pytest / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ==============================
+# Ngrok / Local Testing
+# ==============================
+ngrok.log
+ngrok.yml

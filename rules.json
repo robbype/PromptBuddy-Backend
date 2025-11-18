@@ -1,0 +1,94 @@
+{
+  "rules": {
+    "PromptLength": {
+      "prompt": "Coba tulis promptmu lebih dari 10 kata agar AI bisa memahami konteks dengan lebih baik.",
+      "hint": "Prompt kamu terlalu pendek (kurang dari 10 kata atau 60 karakter). Tambahkan detail agar AI memahami konteksnya."
+    },
+    "PromptMax": {
+      "prompt": "Pertimbangkan untuk memecah promptmu menjadi beberapa bagian agar lebih fokus.",
+      "hint": "Prompt kamu terlalu panjang (lebih dari 40 kata atau 300 karakter). AI mungkin kesulitan memahami inti pertanyaanmu."
+    },
+    "Persona": {
+      "prompt": "Apa peran yang tepat diberikan kepada AI dalam menjelaskan pertanyaanmu?",
+      "hint": "Gunakan kata-kata seperti 'kamu adalah seorang ahli...' agar AI berperan sesuai konteks."
+    },
+    "SourceVerification": {
+      "prompt": "Apakah kamu ingin AI memberikan jawaban yang didukung oleh sumber yang kredibel?",
+      "hint": "Gunakan kata seperti 'sumber terpercaya', 'relevan', atau 'kredibel' untuk meminta verifikasi sumber."
+    },
+    "Ambiguity": {
+      "prompt": "Prompt kamu masih terlalu umum, coba buat lebih spesifik.",
+      "hint": "Gunakan instruksi yang lebih jelas daripada kata-kata umum seperti 'jelaskan', 'buat', atau 'tulis'."
+    },
+    "Mathematical": {
+      "prompt": "Apakah prompt ini melibatkan perhitungan matematis?",
+      "hint": "AI dapat membantu menghitung jika kamu menyertakan ekspresi seperti +, -, *, /, atau =."
+    },
+    "CountTranslation": {
+      "prompt": "Apakah kamu ingin AI menerjemahkan atau menghitung sesuatu?",
+      "hint": "Gunakan kata seperti 'terjemahkan', 'translate', atau 'hitung' untuk memberikan konteks yang jelas."
+    },
+    "Reasoning": {
+      "prompt": "Coba minta AI menjabarkan alasannya dengan langkah-langkah logis.",
+      "hint": "Gunakan kata seperti 'jelaskan', 'langkah', atau 'step' untuk memicu penalaran AI."
+    },
+    "StepByStep": {
+      "prompt": "Apakah kamu ingin AI memberikan jawaban langkah demi langkah?",
+      "hint": "Gunakan format bernomor seperti '1.', '2.', atau 'a.' agar AI menyusun jawaban secara sistematis."
+    },
+    "RecursiveReflective": {
+      "prompt": "Coba dorong AI untuk mempertimbangkan beberapa opsi atau kemungkinan.",
+      "hint": "Gunakan kata seperti 'pilihan', 'opsi', atau 'kemungkinan' untuk memicu refleksi lebih dalam."
+    },
+    "Evaluate": {
+      "prompt": "Apakah kamu ingin AI mengevaluasi atau membandingkan sesuatu?",
+      "hint": "Gunakan kata seperti 'berdasarkan', 'hasil', atau 'output' untuk meminta evaluasi berbasis data."
+    },
+    "Example": {
+      "prompt": "Apakah kamu ingin AI memberikan contoh?",
+      "hint": "Gunakan kata seperti 'contoh', 'misal', atau 'seperti' untuk memicu respons berbasis contoh."
+    },
+    "LtM": {
+      "prompt": "Pertanyaanmu mengandung banyak kata tanya, coba buat lebih fokus.",
+      "hint": "AI lebih efektif jika pertanyaannya tidak terlalu banyak elemen 'apa', 'mengapa', 'bagaimana', dsb."
+    },
+    "RealCase": {
+      "prompt": "Apakah kamu menginginkan jawaban berbasis kasus nyata atau data?",
+      "hint": "Gunakan kata seperti 'data', 'kasus', atau 'artikel' untuk meminta contoh dari dunia nyata."
+    },
+    "Privacy": {
+      "prompt": "Hindari memberikan data pribadi dalam prompt.",
+      "hint": "Prompt kamu mengandung informasi pribadi seperti nama, email, atau nomor telepon. Hapus untuk menjaga privasi."
+    },
+    "Bias": {
+      "prompt": "Apakah promptmu mengandung kata-kata sensitif atau bias?",
+      "hint": "Prompt kamu berpotensi mengandung bias. Coba ubah agar lebih netral dan beretika."
+    },
+    "Acronym": {
+      "prompt": "Pastikan akronim atau singkatan dijelaskan dengan jelas.",
+      "hint": "AI mungkin kesulitan memahami akronim yang tidak umum. Tambahkan penjelasan jika perlu."
+    },
+    "FormatReq": {
+      "prompt": "Apakah kamu ingin AI menyajikan hasil dalam format tertentu (tabel, gambar, atau diagram)?",
+      "hint": "Gunakan kata seperti 'tabel', 'diagram', atau 'ringkas' untuk menentukan format keluaran."
+    }
+  },
+  "combos": {
+    "Persona+PromptLength": {
+      "prompt": "Coba perbaiki promptmu agar lebih panjang dan sesuai dengan peran yang diberikan kepada AI.",
+      "hint": "Kamu sudah menggunakan role prompting, tapi promptnya terlalu pendek."
+    },
+    "Ambiguity+FormatReq+RealCase": {
+      "prompt": "Perjelas instruksi dan tambahkan konteks nyata. Gunakan format tabel atau diagram untuk memperjelas.",
+      "hint": "Kombinasi antara format dan konteks nyata membutuhkan instruksi yang lebih spesifik."
+    },
+    "Privacy+Bias": {
+      "prompt": "Prompt kamu mengandung unsur privasi dan potensi bias. Hapus data pribadi dan gunakan bahasa netral.",
+      "hint": "Selalu perhatikan etika dan privasi saat menulis prompt yang berkaitan dengan data sensitif."
+    },
+    "Reasoning+StepByStep": {
+      "prompt": "Minta AI menjelaskan proses berpikirnya secara langkah demi langkah.",
+      "hint": "Gabungan reasoning dan step-by-step menghasilkan jawaban yang lebih transparan dan logis."
+    }
+  }
+}
