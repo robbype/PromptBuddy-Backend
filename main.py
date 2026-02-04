@@ -5,6 +5,7 @@ from sentence_transformers import SentenceTransformer
 import joblib
 import numpy as np
 import json
+import re
 
 app = FastAPI(title="Rule Detector API")
 
@@ -23,7 +24,7 @@ model = SentenceTransformer("embedding_model")
 clf = joblib.load("rule_classifier.pkl")
 mlb = joblib.load("label_encoder.pkl")
 
-PROBA_THRESHOLD = 0.2 
+PROBA_THRESHOLD = 0.5
 
 class InputText(BaseModel):
     text: str
@@ -49,11 +50,25 @@ def analyze(data: InputText):
         labels = mlb.inverse_transform(pred)
 
     theLabel = list(labels[0])
+    prompt = ""
+    hint = ""
 
     with open("rules.json") as f:
         feedback_rules = json.load(f)
 
-    if len(theLabel) == 1:
+    if not theLabel:
+        sentences = re.split(r'[.!?]\s+', text.strip())
+        sentence_count = len([s for s in sentences if s]) 
+
+        if sentence_count < 10:
+            prompt = f"Teks Anda terlalu singkat ({sentence_count} kalimat). " \
+                     "Berikan konteks yang lebih mendalam agar konversi ke bahasa awam lebih akurat."
+            hint = "Coba tambahkan detail teknis atau contoh kasus pada teks Anda."
+        else:
+            prompt = "Teks sudah cukup panjang dan tidak terdeteksi pelanggaran aturan."
+            hint = "Anda bisa melanjutkan ke proses berikutnya."
+
+    elif len(theLabel) == 1:
         label = theLabel[0]
         rule_data = feedback_rules["rules"].get(label, {})
         prompt = rule_data.get("prompt", "")
@@ -68,6 +83,6 @@ def analyze(data: InputText):
     return {
         "text": text,
         "rules": labels[0] if labels else [],
-        "feedback": prompt,
+        "feedback": prompt if prompt else "",
         "hints": hint
     }

@@ -11,7 +11,7 @@ df = pd.read_csv("rules_dataset.csv")
 df["labels"] = df["labels"].apply(lambda x: x.split(","))
 
 print("🔹 Converting text into embeddings...")
-model = SentenceTransformer("all-MiniLM-L6-v2")
+model = SentenceTransformer("paraphrase-multilingual-MiniLM-L12-v2")
 X = model.encode(df["text"].tolist(), show_progress_bar=True)
 
 print("🔹 Creating binary labels...")
@@ -19,7 +19,7 @@ mlb = MultiLabelBinarizer()
 y = mlb.fit_transform(df["labels"])
 
 print("🔹 Training classifier...")
-clf = MultiOutputClassifier(LogisticRegression(max_iter=1000))
+clf = MultiOutputClassifier(LogisticRegression(max_iter=1000, class_weight='balanced'))
 clf.fit(X, y)
 
 # Save the model and label encoder

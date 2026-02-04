@@ -89,6 +89,10 @@
     "Reasoning+StepByStep": {
       "prompt": "Minta AI menjelaskan proses berpikirnya secara langkah demi langkah.",
       "hint": "Gabungan reasoning dan step-by-step menghasilkan jawaban yang lebih transparan dan logis."
+    },
+    "CountTranslation+Mathematical": {
+      "prompt": "CountTranslation dan Mathematical",
+      "hint": "CountTranslation dan Mathematical hint"
     }
   }
 }
